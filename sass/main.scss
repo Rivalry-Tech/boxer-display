@@ -3,3 +3,22 @@
 @import "hover";
 @import "font-awesome";
 @import "greyscale";
+
+
+#leaderboard {
+	margin: 0px;
+	padding: 0px;
+}
+
+ul.boxer-leaderboard {
+	width: 100%;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	li {
+		border-bottom: 1px solid white;
+		width: 100%;
+		padding: 5px 2px;
+		text-align: left;	
+	}
+}

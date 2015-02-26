@@ -28,21 +28,49 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8" style="border: 1px solid white;">
-                Some arbitrary text
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i>  <span class="light">Rivalry!</span> Charity Challenge
+                </a>
             </div>
-            <div class="col-md-4" style="border: 1px solid white;">
-                Some more arbitrary text
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <section id="main-view" class="container content-section text-center">
+        <div class="row">
+            <div id="boxers" class="col-md-8" style="border: 1px solid white;">
+                <h2>Current Fight</h2>
+            </div>
+            <div id="leaderboard" class="col-md-4" style="border: 1px solid white;">
+                <h4>Leaderboard</h4>
+
+                <ul class="boxer-leaderboard">
+                    <li>Boxer 1<span class="pull-right">546</span></li>
+                    <li>Boxer 2</li>
+                    <li>Boxer 3</li>
+                    <li>Boxer 4</li>
+                    <li>Boxer 5</li>
+                    <li>Boxer 6</li>
+                    <li>Boxer 7</li>
+                    <li>Boxer 8</li>
+                    <li>Boxer 9</li>
+                    <li>Boxer 10</li>
+                </ul>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12" style="border: 1px solid white;">
-                Text of the most arbitrary variety
+            <div id="carousel" class="col-md-12" style="border: 1px solid white;">
+                <p>Text of the most arbitrary variety</p>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -65,6 +93,10 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/grayscale.js"></script>
+    <script src="js/custom.js"></script>
+
+
+
 
 </body>
 
