@@ -22,11 +22,15 @@
 		padding: 0px;
 		li {
 			border-bottom: 1px solid white;
+			font-weight: bold;
 			width: 100%;
 			padding: 10px 5px;
 			text-align: left;
 			font-family: $grayscale-headline-font-family;
-			font-size: 1.25em;	
+			font-size: 1.25em;
+			span {
+				font-weight: normal;
+			}	
 		}
 	}
 }
