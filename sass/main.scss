@@ -18,7 +18,9 @@ ul.boxer-leaderboard {
 	li {
 		border-bottom: 1px solid white;
 		width: 100%;
-		padding: 5px 2px;
-		text-align: left;	
+		padding: 10px 5px;
+		text-align: left;
+		font-family: $grayscale-headline-font-family;
+		font-size: 1.25em;	
 	}
 }
