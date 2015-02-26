@@ -4,23 +4,37 @@
 @import "font-awesome";
 @import "greyscale";
 
-
-#leaderboard {
-	margin: 0px;
-	padding: 0px;
+#boxers {
+	padding-top: 10px;
+	div {
+		padding-top: 10px;
+		padding-bottom: 30px;
+	}
 }
 
-ul.boxer-leaderboard {
-	width: 100%;
-	list-style-type: none;
-	margin: 0px;
-	padding: 0px;
-	li {
-		border-bottom: 1px solid white;
+#leaderboard {
+	padding-top: 20px;
+
+	.boxer-leaderboard {
 		width: 100%;
-		padding: 10px 5px;
-		text-align: left;
-		font-family: $grayscale-headline-font-family;
-		font-size: 1.25em;	
+		list-style-type: none;
+		margin: 0px;
+		padding: 0px;
+		li {
+			border-bottom: 1px solid white;
+			width: 100%;
+			padding: 10px 5px;
+			text-align: left;
+			font-family: $grayscale-headline-font-family;
+			font-size: 1.25em;	
+		}
 	}
+}
+
+#carousel {
+	padding-top: 50px;
+}
+
+#main-view {
+	padding-top: 50px;
 }
