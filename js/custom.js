@@ -1,11 +1,16 @@
 //Gets the boxers' callout count, eventually
 
 $(document).ready(function(){
-  setInterval(function(){
-    $("#leaderboard-list").empty();
+  if ($("#leaderboard-list li").length > 0) {
+    setInterval(function(){
+      $("#leaderboard-list").empty();
+      loadLeaderboard();
+      console.log("leaderboard")
+    }, 30000)
+  } else {
     loadLeaderboard();
-    console.log("leaderboard")
-  }, 5000)
+  }
+  
   var $fightSelect = $('#fight'), $fighter1Id, $fighter2Id, $fighter1votes = $("#fighter1votes"), $fighter2votes = $("#fighter2votes");
   $fightSelect.on('change', function() {
     var splitArray = this.value.split(",");
