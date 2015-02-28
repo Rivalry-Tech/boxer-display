@@ -43,12 +43,12 @@ function loadAjaxFromRivalry(fighter1Id, fighter2Id) {
           return;
         }
       });
-      $("#fighter1name").text(fighter1["name"]);
+      $("#fighter1name").text(fighter1["name"].substring(1, fighter1["name"].length));
       $("#fighter1charity").text(fighter1["callout"])
       $("#fighter1img").attr("src", fighter1.audioFile)
       $("#fighter1votes").text(fighter1["calloutCount"]);
-      $("#fighter2name").text(fighter2["name"]);
-      $("#fighter2charity").text(fighter2["callout"])
+      $("#fighter2name").text(fighter2["name"].substring(1, fighter2["name"].length));;
+      $("#fighter2charity").text(fighter2["callout"]);
       $("#fighter2img").attr("src", fighter2.audioFile)
       $("#fighter2votes").text(fighter2["calloutCount"]);
     },
