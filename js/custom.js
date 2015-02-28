@@ -45,9 +45,11 @@ function loadAjaxFromRivalry(fighter1Id, fighter2Id) {
       });
       $("#fighter1name").text(fighter1["name"]);
       $("#fighter1charity").text(fighter1["callout"])
+      $("fighter1img")
       $("#fighter1votes").text(fighter1["calloutCount"]);
       $("#fighter2name").text(fighter2["name"]);
       $("#fighter2charity").text(fighter2["callout"])
+      $("fighter2img")
       $("#fighter2votes").text(fighter2["calloutCount"]);
     },
 
