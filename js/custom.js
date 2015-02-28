@@ -34,7 +34,8 @@ function loadLeaderboard() {
     success: function( json ) {
       var ul = $("#leaderboard-list");
       $.each(json, function(i){
-        li = $("<li />").text(this["name"].substring(1, this["name"].length) + " " + this["calloutCount"]).appendTo(ul);
+        li = $("<li />").text(this["name"].substring(1, this["name"].length)).appendTo(ul);
+        span = $("<span />").text(this["calloutCount"]).appendTo(li);
       });
     },
 
