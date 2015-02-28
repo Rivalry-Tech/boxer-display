@@ -1,6 +1,7 @@
 //Gets the boxers' callout count, eventually
 
 $(document).ready(function(){
+  loadLeaderboard();
   var $fightSelect = $('#fight'), $fighter1Id, $fighter2Id, $fighter1votes = $("#fighter1votes"), $fighter2votes = $("#fighter2votes");
   $fightSelect.on('change', function() {
     var splitArray = this.value.split(",");
@@ -13,6 +14,46 @@ $(document).ready(function(){
     }, 5000)
   });
 });
+
+function loadLeaderboard() {
+  $.ajax({
+    // the URL for the request
+    url: "http://rivalry-api.herokuapp.com/teams/Fighter",
+
+    // the data to send (will be converted to a query string)
+    data: {},
+
+    // whether this is a POST or GET request
+    type: "GET",
+
+    // the type of data we expect back
+    dataType : "json",
+
+    // code to run if the request succeeds;
+    // the response is passed to the function
+    success: function( json ) {
+      var ul = $("#leaderboard-list");
+      $.each(json, function(i){
+        li = $("<li />").text(this["name"].substring(1, this["name"].length) + " " + this["calloutCount"]).appendTo(ul);
+      });
+    },
+
+    // code to run if the request fails; the raw request and
+    // status codes are passed to the function
+    error: function( xhr, status, errorThrown ) {
+        // alert( "Sorry, there was a problem!" );
+        // console.log( "Error: " + errorThrown );
+        // console.log( "Status: " + status );
+        // console.dir( xhr );
+    },
+
+    // code to run regardless of success or failure
+    complete: function( xhr, status ) {
+      console.log( "The request is complete!" );
+      // return games;
+    }
+  })
+}
 
 function loadAjaxFromRivalry(fighter1Id, fighter2Id) {
   $.ajax({
