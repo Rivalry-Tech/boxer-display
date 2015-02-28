@@ -5,13 +5,13 @@
  */
 
 // jQuery to collapse the navbar on scroll
-$(window).scroll(function() {
-    if ($(".navbar").offset().top > 50) {
-        $(".navbar-fixed-top").addClass("top-nav-collapse");
-    } else {
-        $(".navbar-fixed-top").removeClass("top-nav-collapse");
-    }
-});
+// $(window).scroll(function() {
+//     if ($(".navbar").offset().top > 50) {
+//         $(".navbar-fixed-top").addClass("top-nav-collapse");
+//     } else {
+//         $(".navbar-fixed-top").removeClass("top-nav-collapse");
+//     }
+// });
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
@@ -31,7 +31,7 @@ $('.navbar-collapse ul li a').click(function() {
 
 // Google Maps Scripts
 // When the window has finished loading create our google map below
-google.maps.event.addDomListener(window, 'load', init);
+// google.maps.event.addDomListener(window, 'load', init);
 
 function init() {
     // Basic options for a simple Google Map
