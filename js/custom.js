@@ -1,9 +1,10 @@
 //Gets the boxers' callout count, eventually
 
 $(document).ready(function(){
+
   $.ajax({
     // the URL for the request
-    url: "http://rivalry-api.herokuapp.com/teams/Charity",
+    url: "http://rivalry-api.herokuapp.com/teams/Fighter",
 
     // the data to send (will be converted to a query string)
     data: {},
@@ -18,56 +19,27 @@ $(document).ready(function(){
     // the response is passed to the function
     success: function( json ) {
       console.log(json);
-      // var $select = $("#games");
-      // $.each(json, function(i, val){
-      //   var optionText = json[i]["awayteam/_text"] + " at " + json[i]["hometeam/_text"];
-      //   $select.append($('<option />', {value: (i), text: optionText}));
-      // });
-      // $select.on('change', function(){
-      //   var game = json[this.value];
-      //   console.log(game);
-      //   if (game["homePrimaryColor"] === undefined){
-      //     $("#home").css("background-color", "#111");
-      //     $("#home").css("color", "white");
-      //   } else {
-      //     $("#home").css("background-color", game["homePrimaryColor"]);
-      //     $("#home").css("color", game["homeSecondaryColor"]);
-      //   };
-      //   if (game["awayPrimaryColor"] === undefined){
-      //     $("#away").css("color", "#111");
-      //     $("#away").css("background-color", "white");
-      //   } else {
-      //     $("#away").css("background-color", game["awayPrimaryColor"]);
-      //     $("#away").css("color", game["awaySecondaryColor"]);
-      //   };
-      //   $("#homename").html('<span id="homerank"></span>' + game["hometeam/_text"] + '<span id="homerecord"></span>');
-      //   $("#awayname").html('<span id="awayrank"></span>' + game["awayteam/_text"] + '<span id="awayrecord"></span>');
-      //   $("#homerank").text(game["homerank"]);
-      //   $("#awayrank").text(game["awayrank"]);
-      //   $("#homerecord").text(game["homerecord"]);
-      //   $("#awayrecord").text(game["awayrecord"]);
-      //   if (game["homescore"] === undefined){
-      //     $("#homescore").text("0");
-      //   } else {
-      //     $("#homescore").text(game["homescore"]);
-      //   }
-      //   if (game["awayscore"] === undefined){
-      //     $("#awayscore").text("0");
-      //   } else {
-      //     $("#awayscore").text(game["awayscore"]);
-      //   }
-      //   if (game["awayCalloutCount"] === undefined){
-      //     $("#awayCalloutCount").text("0");
-      //   } else {
-      //     $("#awayCalloutCount").text("Callouts: " + game["awayCalloutCount"]);
-      //   }
-      //   if (game["homeCalloutCount"] === undefined){
-      //     $("#homeCalloutCount").text("0");
-      //   } else {
-      //     $("#homeCalloutCount").text("Callouts: " + game["homeCalloutCount"]);
-      //   }
-      //   $("#status").html("Game time: " + game["status"]);
-      // });
+
+      var $fightSelect = $('#fight');
+      $fightSelect.on('change', function() {
+        var splitArray = this.value.split(","),
+        fighter1Id = splitArray[0].substring(2, 12),
+        fighter2Id = splitArray[1].substring(1, 11),
+        fighter1, fighter2;
+
+        json.forEach(function(fighter){
+          if (fighter.objectId === fighter1Id){
+            fighter1 = fighter;
+          } else if (fighter.objectId === fighter2Id) {
+            fighter2 = fighter;
+          } else {
+            return;
+          }
+        });
+
+        console.log(fighter1.name);
+        console.log(fighter2.name);
+      });
     },
 
     // code to run if the request fails; the raw request and
