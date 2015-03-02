@@ -8,6 +8,8 @@ $(document).ready(function(){
   }, 20000)
   var $fightSelect = $('#fight'), $fighter1Id = "hWJ5Aw9V8g", $fighter2Id = "CGxD5yOqbz", $fighter3Id = "nL9Ln5esPy", $fighter1votes = $("#fighter1votes"), 
   $fighter2votes = $("#fighter2votes"), $fighter3votes = $("#fighter3votes");
+  
+  //removed the select box so this is unnecessary
   /*$fightSelect.on('change', function() {
     var splitArray = this.value.split(",");
     $fighter1Id = splitArray[0].substring(2, 12);
@@ -18,6 +20,7 @@ $(document).ready(function(){
       updateCalloutCounts($fighter2votes, $fighter2Id);
     }, 5000)
   });*/
+
   setInterval(function() {
     updateCalloutCounts($fighter1votes, $fighter1Id);
     updateCalloutCounts($fighter2votes, $fighter2Id);
@@ -66,6 +69,9 @@ function loadLeaderboard() {
   })
 }
 
+
+
+//This function does not get called in the Pauleys version
 function loadAjaxFromRivalry(fighter1Id, fighter2Id, fighter3Id) {
   $.ajax({
     // the URL for the request
