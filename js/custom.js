@@ -6,8 +6,9 @@ $(document).ready(function(){
     loadLeaderboard();
     console.log("leaderboard")
   }, 20000)
-  var $fightSelect = $('#fight'), $fighter1Id, $fighter2Id, $fighter1votes = $("#fighter1votes"), $fighter2votes = $("#fighter2votes");
-  $fightSelect.on('change', function() {
+  var $fightSelect = $('#fight'), $fighter1Id = "hWJ5Aw9V8g", $fighter2Id = "CGxD5yOqbz", $fighter3Id = "nL9Ln5esPy", $fighter1votes = $("#fighter1votes"), 
+  $fighter2votes = $("#fighter2votes"), $fighter3votes = $("#fighter3votes");
+  /*$fightSelect.on('change', function() {
     var splitArray = this.value.split(",");
     $fighter1Id = splitArray[0].substring(2, 12);
     $fighter2Id = splitArray[1].substring(1, 11);
@@ -16,13 +17,18 @@ $(document).ready(function(){
       updateCalloutCounts($fighter1votes, $fighter1Id);
       updateCalloutCounts($fighter2votes, $fighter2Id);
     }, 5000)
-  });
+  });*/
+  setInterval(function() {
+    updateCalloutCounts($fighter1votes, $fighter1Id);
+    updateCalloutCounts($fighter2votes, $fighter2Id);
+    updateCalloutCounts($fighter3votes, $fighter3Id);
+  }, 5000)
 });
 
 function loadLeaderboard() {
   $.ajax({
     // the URL for the request
-    url: "http://rivalry-api.herokuapp.com/teams/Fighter",
+    url: "http://rivalry-api.herokuapp.com/teams/Charity",
 
     // the data to send (will be converted to a query string)
     data: {},
@@ -60,10 +66,10 @@ function loadLeaderboard() {
   })
 }
 
-function loadAjaxFromRivalry(fighter1Id, fighter2Id) {
+function loadAjaxFromRivalry(fighter1Id, fighter2Id, fighter3Id) {
   $.ajax({
     // the URL for the request
-    url: "http://rivalry-api.herokuapp.com/teams/Fighter",
+    url: "http://rivalry-api.herokuapp.com/teams/Charity",
 
     // the data to send (will be converted to a query string)
     data: {},
