@@ -6,9 +6,9 @@ $(document).ready(function(){
     loadLeaderboard();
     console.log("leaderboard")
   }, 20000)
-  var $fightSelect = $('#fight'), $fighter1Id = "hWJ5Aw9V8g", $fighter2Id = "CGxD5yOqbz", $fighter3Id = "nL9Ln5esPy", $fighter1votes = $("#fighter1votes"), 
+  var $fightSelect = $('#fight'), $fighter1Id = "hWJ5Aw9V8g", $fighter2Id = "CGxD5yOqbz", $fighter3Id = "nL9Ln5esPy", $fighter1votes = $("#fighter1votes"),
   $fighter2votes = $("#fighter2votes"), $fighter3votes = $("#fighter3votes");
-  
+
   //removed the select box so this is unnecessary
   /*$fightSelect.on('change', function() {
     var splitArray = this.value.split(",");
@@ -146,6 +146,7 @@ function updateCalloutCounts($element, $teamId) {
       success: function( json ) {
         console.log(json.name)
         $element.text(json.calloutCount);
+        console.log(json.name + ": " + json.calloutCount);
       },
 
       // code to run if the request fails; the raw request and
